@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailTrack - Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">🐾 TailTrack</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="pets.html">My Pets</a>
+            <a href="vaccinations.html">Vaccinations</a>
+            <a href="vet.html">Find a Vet</a>
+            <a href="adoption.html">Adoption</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+
+    <section class="lost-section">
+
+        <div class="lost-header">
+            <h1>Lost & Found Pets 🔎</h1>
+            <p>Help reunite lost pets with their families.</p>
+        </div>
+
+        <div class="lost-form-box">
+
+            <h2>Report a Pet</h2>
+
+            <form id="lostPetForm">
+
+                <label>Report Type</label>
+
+                <select id="reportType" required>
+                    <option value="">Select type</option>
+                    <option value="Lost">I Lost a Pet</option>
+                    <option value="Found">I Found a Pet</option>
+                </select>
+
+
+                <label>Pet Name</label>
+
+                <input
+                    type="text"
+                    id="lostPetName"
+                    placeholder="Enter pet name"
+                    required
+                >
+
+
+                <label>Species</label>
+
+                <select id="lostPetSpecies" required>
+                    <option value="">Select species</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Bird">Bird</option>
+                    <option value="Rabbit">Rabbit</option>
+                    <option value="Other">Other</option>
+                </select>
+
+
+                <label>Breed</label>
+
+                <input
+                    type="text"
+                    id="lostPetBreed"
+                    placeholder="Enter breed"
+                    required
+                >
+
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    id="lostPetLocation"
+                    placeholder="Where was the pet lost/found?"
+                    required
+                >
+
+
+                <label>Date</label>
+
+                <input
+                    type="date"
+                    id="lostPetDate"
+                    required
+                >
+
+
+                <label>Contact Number</label>
+
+                <input
+                    type="tel"
+                    id="lostPetContact"
+                    placeholder="Enter contact number"
+                    required
+                >
+
+
+                <label>Additional Details</label>
+
+                <textarea
+                    id="lostPetDetails"
+                    placeholder="Describe the pet or provide any useful information..."
+                ></textarea>
+
+
+                <button type="submit">
+                    Submit Report 🔎
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Search -->
+
+        <div class="lost-search">
+
+            <input
+                type="text"
+                id="lostSearch"
+                placeholder="Search by pet name, breed or location..."
+            >
+
+        </div>
+
+
+        <!-- Listings -->
+
+        <div class="lost-listings">
+
+            <h2>Pet Reports</h2>
+
+            <div id="lostPetList">
+
+                <p class="no-lost-pets">
+                    No pet reports yet.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

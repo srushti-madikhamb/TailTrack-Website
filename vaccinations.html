@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailTrack - Vaccinations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">🐾 TailTrack</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="pets.html">My Pets</a>
+            <a href="vaccinations.html">Vaccinations</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+
+    <section class="vaccination-section">
+
+        <div class="vaccination-header">
+            <h1>Vaccination Records 💉</h1>
+            <p>Keep track of your pet's vaccination schedule.</p>
+        </div>
+
+        <div class="vaccination-form-box">
+
+            <h2>Add Vaccination</h2>
+
+            <form id="vaccinationForm">
+
+                <label>Pet Name</label>
+                <input type="text" id="vaccinationPet"
+                       placeholder="Enter pet name" required>
+
+                <label>Vaccine Name</label>
+                <input type="text" id="vaccineName"
+                       placeholder="Example: Rabies" required>
+
+                <label>Vaccination Date</label>
+                <input type="date" id="vaccinationDate" required>
+
+                <label>Next Due Date</label>
+                <input type="date" id="nextDueDate" required>
+
+                <button type="submit">
+                    Add Vaccination 💉
+                </button>
+
+            </form>
+
+        </div>
+
+        <div class="vaccination-records">
+
+            <h2>Vaccination Records</h2>
+
+            <div id="vaccinationList">
+                <p class="no-vaccinations">
+                    No vaccination records added yet.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

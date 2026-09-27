@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailTrack - Find a Vet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">🐾 TailTrack</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="pets.html">My Pets</a>
+            <a href="vaccinations.html">Vaccinations</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+
+    <section class="vet-section">
+
+        <div class="vet-header">
+            <h1>Find a Vet 🩺</h1>
+            <p>Find veterinary services and book an appointment for your pet.</p>
+        </div>
+
+        <div class="vet-container">
+
+            <div class="vet-container">
+
+    <!-- Blue Cross Vets Clinic -->
+
+    <div class="vet-card">
+
+        <div class="vet-icon">🩺</div>
+
+        <h2>Blue Cross Vets Clinic</h2>
+
+        <p>
+            <strong>Type:</strong>
+            Veterinary Clinic
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            Sector 12, Kharghar, Navi Mumbai
+        </p>
+
+        <p>
+            <strong>Contact:</strong>
+            +91 81690 67671
+        </p>
+
+        <button onclick="openAppointment('Blue Cross Vets Clinic')">
+            Book Appointment
+        </button>
+
+    </div>
+
+
+    <!-- Shree Pet Care -->
+
+    <div class="vet-card">
+
+        <div class="vet-icon">🐾</div>
+
+        <h2>Shree Pet Care</h2>
+
+        <p>
+            <strong>Type:</strong>
+            Veterinary Care
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            Sector 14, Sanpada, Navi Mumbai
+        </p>
+
+        <p>
+            <strong>Contact:</strong>
+            +91 90820 58135
+        </p>
+
+        <button onclick="openAppointment('Shree Pet Care')">
+            Book Appointment
+        </button>
+
+    </div>
+
+
+    <!-- Pets Home Pet Clinic -->
+
+    <div class="vet-card">
+
+        <div class="vet-icon">🐶</div>
+
+        <h2>Pets Home Pet Clinic</h2>
+
+        <p>
+            <strong>Type:</strong>
+            Veterinary Clinic
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            Sector 12, Kharghar, Navi Mumbai
+        </p>
+
+        <p>
+            <strong>Contact:</strong>
+            +91 77381 83173
+        </p>
+
+        <button onclick="openAppointment('Pets Home Pet Clinic')">
+            Book Appointment
+        </button>
+
+    </div>
+
+</div>
+        </div>
+
+        <!-- Appointment Form -->
+
+        <div class="appointment-box" id="appointmentBox">
+
+            <h2>Book an Appointment 📅</h2>
+
+            <form id="appointmentForm">
+
+                <label>Selected Clinic</label>
+                <input type="text" id="clinicName" readonly>
+
+                <label>Pet Name</label>
+                <input type="text" id="appointmentPet"
+                    placeholder="Enter your pet's name" required>
+
+                <label>Appointment Date</label>
+                <input type="date" id="appointmentDate" required>
+
+                <label>Appointment Time</label>
+                <input type="time" id="appointmentTime" required>
+
+                <label>Reason for Visit</label>
+                <textarea id="visitReason"
+                    placeholder="Example: Vaccination, check-up, illness..."
+                    required></textarea>
+
+                <button type="submit">
+                    Confirm Appointment 📅
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Saved Appointments -->
+
+        <div class="appointments">
+
+            <h2>My Appointments</h2>
+
+            <div id="appointmentList">
+                <p class="no-appointments">
+                    No appointments booked yet.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

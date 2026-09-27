@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailTrack - Pet Adoption</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">🐾 TailTrack</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="pets.html">My Pets</a>
+            <a href="vaccinations.html">Vaccinations</a>
+            <a href="vet.html">Find a Vet</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </nav>
+
+    <section class="adoption-section">
+
+        <div class="adoption-header">
+            <h1>Pet Adoption 🐾</h1>
+            <p>Find a loving companion looking for a forever home.</p>
+        </div>
+
+        <!-- Search -->
+
+        <div class="adoption-search">
+
+            <input
+                type="text"
+                id="adoptionSearch"
+                placeholder="Search by pet name, breed or location..."
+            >
+
+        </div>
+
+
+        <!-- Pet Listings -->
+
+        <div class="adoption-container" id="adoptionList">
+
+            <div class="adoption-card"
+                 data-search="max dog labrador kharghar">
+
+                <div class="adoption-image">🐶</div>
+
+                <h2>Max</h2>
+
+                <p><strong>Breed:</strong> Labrador</p>
+                <p><strong>Age:</strong> 2 years</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Location:</strong> Kharghar</p>
+
+                <span class="adoption-status">Available</span>
+
+                <button onclick="openAdoption('Max')">
+                    Adopt Max
+                </button>
+
+            </div>
+
+
+            <div class="adoption-card"
+                 data-search="luna cat persian belapur">
+
+                <div class="adoption-image">🐱</div>
+
+                <h2>Luna</h2>
+
+                <p><strong>Breed:</strong> Persian Cat</p>
+                <p><strong>Age:</strong> 1 year</p>
+                <p><strong>Gender:</strong> Female</p>
+                <p><strong>Location:</strong> Belapur</p>
+
+                <span class="adoption-status">Available</span>
+
+                <button onclick="openAdoption('Luna')">
+                    Adopt Luna
+                </button>
+
+            </div>
+
+
+            <div class="adoption-card"
+                 data-search="bruno dog indie sanpada">
+
+                <div class="adoption-image">🐕</div>
+
+                <h2>Bruno</h2>
+
+                <p><strong>Breed:</strong> Indian Pariah</p>
+                <p><strong>Age:</strong> 3 years</p>
+                <p><strong>Gender:</strong> Male</p>
+                <p><strong>Location:</strong> Sanpada</p>
+
+                <span class="adoption-status">Available</span>
+
+                <button onclick="openAdoption('Bruno')">
+                    Adopt Bruno
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Adoption Form -->
+
+        <div class="adoption-form-box" id="adoptionFormBox">
+
+            <h2>Adoption Request 🐾</h2>
+
+            <form id="adoptionForm">
+
+                <label>Selected Pet</label>
+
+                <input
+                    type="text"
+                    id="selectedPet"
+                    readonly
+                >
+
+
+                <label>Your Name</label>
+
+                <input
+                    type="text"
+                    id="adopterName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="adopterPhone"
+                    placeholder="Enter phone number"
+                    required
+                >
+
+
+                <label>Why do you want to adopt?</label>
+
+                <textarea
+                    id="adoptionReason"
+                    placeholder="Tell us why you want to adopt..."
+                    required
+                ></textarea>
+
+
+                <button type="submit">
+                    Submit Adoption Request 🐾
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Adoption Requests -->
+
+        <div class="adoption-requests">
+
+            <h2>My Adoption Requests</h2>
+
+            <div id="adoptionRequestList">
+
+                <p class="no-requests">
+                    No adoption requests submitted yet.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

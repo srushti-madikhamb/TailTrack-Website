@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Pets - TailTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">🐾 TailTrack</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+    </div>
+</nav>
+
+
+<section class="page-section">
+
+    <div class="page-header">
+        <h1>🐾 My Pets</h1>
+        <p>Manage your pet's details, nutrition and health information.</p>
+    </div>
+
+
+    <!-- ADD PET -->
+    <div class="form-container">
+
+        <h2>Add New Pet</h2>
+
+        <form id="petForm">
+
+            <div class="form-section">
+                <h3>🐾 Basic Details</h3>
+
+                <label>Pet Name</label>
+                <input type="text" id="petName"
+                       placeholder="Enter pet name" required>
+
+                <label>Species</label>
+                <select id="petSpecies" required>
+                    <option value="">Select Species</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Rabbit">Rabbit</option>
+                    <option value="Bird">Bird</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label>Breed</label>
+                <input type="text" id="petBreed"
+                       placeholder="Enter breed">
+
+                <label>Age</label>
+                <input type="number" id="petAge"
+                       min="0" placeholder="Age in years" required>
+
+                <label>Gender</label>
+                <select id="petGender">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label>Weight (kg)</label>
+                <input type="number" id="petWeight"
+                       step="0.1" min="0"
+                       placeholder="e.g. 12.5">
+            </div>
+
+
+            <div class="form-section">
+                <h3>🥗 Nutrition & Diet</h3>
+
+                <label>Diet Type</label>
+                <select id="dietType">
+                    <option value="">Select Diet Type</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                    <option value="Mixed">Mixed</option>
+                    <option value="Special Diet">Special Diet</option>
+                </select>
+
+                <label>Food Preference</label>
+                <input type="text" id="foodPreference"
+                       placeholder="e.g. Chicken, Rice, Dry Food">
+
+                <label>Meals Per Day</label>
+                <input type="number" id="mealsPerDay"
+                       min="1" max="10"
+                       placeholder="e.g. 3">
+
+                <label>Allergies</label>
+                <input type="text" id="allergies"
+                       placeholder="e.g. None / Chicken allergy">
+
+                <label>Feeding Instructions</label>
+                <textarea id="feedingInstructions"
+                          placeholder="Enter feeding instructions..."></textarea>
+            </div>
+
+
+            <div class="form-section">
+                <h3>🩺 Health Information</h3>
+
+                <label>Medical Conditions</label>
+                <textarea id="medicalConditions"
+                          placeholder="Enter medical conditions, if any..."></textarea>
+
+                <label>Current Medicines</label>
+                <textarea id="currentMedicines"
+                          placeholder="Enter current medicines, if any..."></textarea>
+
+                <label>Health Notes</label>
+                <textarea id="healthNotes"
+                          placeholder="Enter additional health information..."></textarea>
+            </div>
+
+
+            <div class="form-section">
+                <h3>📝 Additional Notes</h3>
+
+                <textarea id="petNotes"
+                          placeholder="Any other information about your pet..."></textarea>
+            </div>
+
+
+            <button type="submit">Add Pet 🐾</button>
+
+        </form>
+
+    </div>
+
+
+    <!-- SAVED PETS -->
+
+    <div class="pets-section">
+
+        <h2>My Saved Pets</h2>
+
+        <div id="petList"></div>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

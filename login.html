@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TailTrack - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            🐾 TailTrack
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="login.html">Login</a>
+
+        </div>
+
+    </nav>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>Welcome Back 🐾</h1>
+
+            <p>Login to manage your pet's care.</p>
+<form id="loginForm"></form>
+
+          <form id="loginForm" onsubmit="loginAccount(event)"></form>
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+               <button type="button" onclick="loginAccount()">Login</button>
+
+            </form>
+
+            <p class="register-text">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+<>
+<script>
+async function loginAccount() {
+
+    const form = document.getElementById("loginForm");
+
+    if (!form) {
+        alert("Login form not found.");
+        return;
+    }
+
+    // Try common IDs first
+    let emailInput =
+        document.getElementById("email") ||
+        document.getElementById("loginEmail");
+
+    let passwordInput =
+        document.getElementById("password") ||
+        document.getElementById("loginPassword");
+
+    // If IDs are different, use the form inputs
+    const inputs = form.querySelectorAll("input");
+
+    if (!emailInput && inputs.length >= 1) {
+        emailInput = inputs[0];
+    }
+
+    if (!passwordInput && inputs.length >= 2) {
+        passwordInput = inputs[1];
+    }
+
+    if (!emailInput || !passwordInput) {
+        alert("Login fields could not be found.");
+        return;
+    }
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    if (!email || !password) {
+        alert("Please enter email and password.");
+        return;
+    }
+
+    try {
+
+        const response = await fetch(
+            "http://localhost:8080/api/login",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type":
+                        "application/x-www-form-urlencoded"
+                },
+                body:
+                    "email=" + encodeURIComponent(email) +
+                    "&password=" + encodeURIComponent(password)
+            }
+        );
+
+        const result = await response.text();
+
+        console.log("Login response:", result);
+
+        if (response.ok) {
+
+            alert("Login successful! 🐾");
+
+            window.location.href = "dashboard.html";
+
+        } else {
+
+            alert(result);
+        }
+
+    } catch (error) {
+
+        console.error("Login error:", error);
+
+        alert(
+            "Unable to connect to TailTrack backend."
+        );
+    }
+}
+</script>
+</body>
+
+</html>
